@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'optparse'
+require 'spinoff/server'
+
+config = {}
+
+parser = OptionParser.new do |o|
+  o.banner = 'Usage: spinoff-server [options] <init file>'
+
+  o.on('--rspec', 'Use rspec framework (default)') do |v|
+    config[:test_framework] = :rspec
+  end
+
+  o.on('--test-unit', 'Use test/unit framework') do |v|
+    config[:test_framework] = :testunit
+  end
+
+  o.on('-h', '--help') do
+    STDERR.puts o
+    exit 1
+  end
+end
+parser.parse!
+
+unless config[:test_framework]
+  STDERR.puts "Please select a test framework! (see --help)"
+  exit 1
+end
+
+config[:init_script] = ARGV.shift unless ARGV.empty?
+
+Spinoff::Server.start(config)
+
+exit 0

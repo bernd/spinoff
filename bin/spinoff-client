@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'spinoff/client'
+
+Spinoff::Client.start(ARGV)
+
+exit 0
