@@ -52,6 +52,7 @@ you preload in the init file, you have to restart the Spinoff server.
 Example:
 
 ```ruby
+ENV['RAILS_ENV'] = 'test'
 require 'config/application'
 require 'rspec'
 ```
