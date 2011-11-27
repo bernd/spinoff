@@ -70,6 +70,9 @@ Sending a list of test files to the server:
 Spinoff should work well with autotest(ish) tools. Just start the server and
 execute the spinoff client on file changes.
 
+There is [guard-spinoff](https://github.com/bernd/guard-spinoff) to use
+Spinoff with [Guard](https://github.com/guard/guard).
+
 # JRuby Support
 
 Since JRuby does not support the fork system call, Spinoff is using a
