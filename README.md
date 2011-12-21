@@ -6,6 +6,11 @@ It does that by preloading your environment and then using functions like
 `fork` for each run of your test suite to avoid loading framework code
 like Rails over and over again. (it supports JRuby as well)
 
+# Attention
+
+If you are using rails, you probably want to use [Spin](https://github.com/jstorimer/spin)
+because it is configuration free.
+
 # Credits
 
 Lots of code has been taken from the [Spin](https://github.com/jstorimer/spin)
@@ -42,6 +47,8 @@ the following points.
    Spin does only support Rails at this time of writing.
 
 2. It works with [JRuby](http://www.jruby.org/)!
+
+3. It requires configuration.
 
 # Usage
 
